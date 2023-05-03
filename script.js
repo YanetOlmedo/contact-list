@@ -1,16 +1,16 @@
-// Crear una lista de contactos con datos predefinidos
+// Lista de contactos con datos predefinidos
 let listaContactos = [
-  {nombre: "Homero Simpson", telefono: "1234-5678"},
-  {nombre: "Marge Simpson", telefono: "2345-678"},
-  {nombre: "Bart Simpson", telefono: "3456-7890"},
-  {nombre: "Maggie Simpson", telefono: "4567-8910"}
+  {nombre: "homero simpson", telefono: "12345678"},
+  {nombre: "marge simpson", telefono: "2345678"},
+  {nombre: "bart simpson", telefono: "34567890"},
+  {nombre: "maggie simpson", telefono: "45678910"}
 ];
 
-// Función para añadir un nuevo contacto a la lista. 
+// Añadir un nuevo contacto a la lista. 
 function agregarContacto() {
   let continuar = true;
   while (continuar) {
-    let nom = prompt("Ingrese el nombre y apellido del contacto");
+    let nom = prompt("Ingrese el nombre y apellido del contacto").toLowerCase();
     let tel = prompt("Ingrese el teléfono del contacto");
     let nuevoContacto = {nombre: nom, telefono: tel};
     
@@ -24,7 +24,7 @@ function agregarContacto() {
 }
 
 
-// Función para borrar un contacto existente de la lista
+// Borrar un contacto existente de la lista
 function borrarContacto(nombre) {
   for (let i = 0; i < listaContactos.length; i++) {
     if (listaContactos[i].nombre === nombre) {
@@ -34,15 +34,15 @@ function borrarContacto(nombre) {
   }
 }
 
-// Función para imprimir los contactos en la lista
+// Imprimir los contactos en la lista
 function imprimirContactos() {
-  console.log("Contact List:");
-  for (let i = 0; i < listaContactos.length; i++) {
-    console.log(listaContactos[i].nombre + " - " + listaContactos[i].telefono);
+  console.log("Lista de contactos:");
+  for (let contacto of listaContactos) {
+    console.log(contacto);
   }
 }
 
 // Testeo de funciones.
 agregarContacto()
-borrarContacto("Maggie Simpson");
+borrarContacto("maggie simpson");
 imprimirContactos();
